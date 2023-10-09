@@ -3,11 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who Am I?</title>
+    <title>Password Protected ARG Clue</title>
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f3f4f6;
+        }
+
+        #passwordSection, #successMessage {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+        }
+
         #successMessage {
             display: none;
         }
+
+        label {
+            margin-right: 10px;
+        }
+
+        button {
+            margin-left: 10px;
+            padding: 5px 15px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
@@ -25,7 +72,7 @@
 <script>
     function checkPassword() {
         var inputPassword = document.getElementById('passwordInput').value;
-        var correctPassword = "millwater";  // Replace with your desired password
+        var correctPassword = "millwater";
 
         if(inputPassword === correctPassword) {
             document.getElementById('passwordSection').style.display = 'none';
