@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don't Drink The Water</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            text-align: center;
+            margin: 20px;
+        }
+        #container {
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- Repeatedly insert "don't drink the water" here using JavaScript -->
+    </div>
+
+    <script>
+        // Initial load
+        for (let i = 0; i < 20; i++) {
+            const message = document.createElement('p');
+            message.textContent = "Don't drink the water";
+            document.getElementById('container').appendChild(message);
+        }
+
+        // Check for scroll and append more
+        window.addEventListener('scroll', function() {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                // User is at the bottom of the page
+                for (let i = 0; i < 20; i++) {
+                    const message = document.createElement('p');
+                    message.textContent = "Don't drink the water";
+                    document.getElementById('container').appendChild(message);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
