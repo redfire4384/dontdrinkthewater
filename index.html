@@ -15,11 +15,24 @@
         #container {
             min-height: 200vh;
         }
+        #helpButton {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+    <button id="helpButton" onclick="location.href='deliv1.html'">HELP</button>
+
     <div id="container">
-        <!-- We'll still use the initial setup for appending messages, even though the focus is on the background change -->
+        <!-- We'll use the initial setup for appending messages -->
     </div>
 
     <script>
