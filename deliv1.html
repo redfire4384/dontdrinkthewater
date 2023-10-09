@@ -13,6 +13,8 @@
             align-items: center;
             justify-content: center;
             background-color: #f3f4f6;
+            overflow: hidden; /* To ensure raindrops don't cause scroll */
+            position: relative;
         }
 
         #passwordSection, #successMessage {
@@ -21,6 +23,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: 0.3s ease;
+            z-index: 1;  /* Keep it above the raindrops */
         }
 
         #successMessage {
@@ -55,6 +58,21 @@
             text-decoration: underline;
         }
 
+        @keyframes raindropFall {
+            to {
+                transform: translateY(calc(100vh + 10px));
+            }
+        }
+
+        .raindrop {
+            position: absolute;
+            width: 2px;
+            height: 5px;
+            background-color: black;
+            border-radius: 50%;
+            animation: raindropFall linear infinite;
+        }
+
     </style>
 </head>
 <body>
@@ -72,8 +90,8 @@
 <script>
     function checkPassword() {
         var inputPassword = document.getElementById('passwordInput').value;
-        var correctPassword = "millwater";
-
+        var correctPassword = "millwater"; 
+        
         if(inputPassword === correctPassword) {
             document.getElementById('passwordSection').style.display = 'none';
             document.getElementById('successMessage').style.display = 'block';
@@ -81,6 +99,29 @@
             alert("Incorrect password. Please try again.");
         }
     }
+
+    function createRaindrop() {
+        var raindrop = document.createElement('div');
+        raindrop.classList.add('raindrop');
+
+        // Random starting position
+        raindrop.style.left = Math.random() * window.innerWidth + 'px';
+        raindrop.style.top = -10 + 'px'; // Start just above the viewport
+
+        // Random duration for variation in raindrop speed
+        let animationDuration = (Math.random() * 2 + 2) + 's'; // between 2 to 4 seconds
+        raindrop.style.animationDuration = animationDuration;
+
+        document.body.appendChild(raindrop);
+
+        // Remove raindrop after it finishes falling to prevent too many DOM elements
+        setTimeout(function() {
+            raindrop.remove();
+        }, parseFloat(animationDuration) * 1000);
+    }
+
+    // Create raindrops at random intervals
+    setInterval(createRaindrop, 50);
 </script>
 
 </body>
