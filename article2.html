@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Secrets of Millwater</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #1a1a1a;
+            color: #e6e6e6;
+            margin: 40px;
+        }
+        .newspaper {
+            position: relative;
+            width: 80%;
+            margin: auto;
+            background-color: #2a2a2a;
+            padding: 20px;
+            box-shadow: 3px 3px 10px rgba(255,255,255,0.2);
+        }
+        .headline {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px #ff0000;
+        }
+        .article {
+            margin-bottom: 40px;
+        }
+        .article img {
+            float: left;
+            margin-right: 20px;
+            max-width: 200px;
+            height: auto;
+            filter: grayscale(100%);
+        }
+
+        /* Glitch effect */
+        .glitch-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch {
+            position: relative;
+            display: inline-block;
+            animation: glitch-animation 2s infinite;
+            color: #ff0000;
+            white-space: nowrap;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            white-space: nowrap;
+        }
+
+        .glitch::before {
+            color: #00ff00;
+            clip: rect(4px, 150px, 14px, 0);
+            animation: glitch-animation-2 3s infinite;
+        }
+
+        .glitch::after {
+            color: #0000ff;
+            clip: rect(14px, 150px, 24px, 0);
+            animation: glitch-animation-3 2.5s infinite;
+        }
+
+        @keyframes glitch-animation {
+            2%, 64% {
+                transform: translate(1px, 0);
+            }
+            4%, 60% {
+                transform: translate(-1px, 0);
+            }
+            62% {
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes glitch-animation-2 {
+            2%, 64% {
+                transform: translate(2px, -1px);
+            }
+            4%, 60% {
+                transform: translate(-2px, 2px);
+            }
+            62% {
+                transform : translate(1px, -1px);
+            }
+        }
+
+        @keyframes glitch-animation-3 {
+            2%, 64% {
+                transform: translate(-1px, 2px);
+            }
+            4%, 60% {
+                transform: translate(2px, -1px);
+            }
+            62% {
+                transform: translate(-1px, 2px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="newspaper">
+        <div class="headline">Dreadful Mysteries of Millwater</div>
+
+        <div class="article">
+            <img src="https://www.willametteheritage.org/wp-content/uploads/2017/03/Mission-Mill-spring-8-copy.jpg" alt="Haunted Millwater building">
+            <h2>Abandoned Mill Whispers of Death</h2>
+            <p>Chilling accounts from brave souls who dared to approach the Millwater edifice speak of ghostly apparitions, blood-curdling screams, and visions of its murderous past. Some claim to have seen shadowy figures performing dark rituals, while others have vanished, never to be seen again. Venture at your own peril.</p>
+        </div>
+
+        <div class="article">
+            <h2>Ducks Found Dead at Local Pond</h2>
+            <p>In a grisly discovery, dozens of dead ducks were found floating lifelessly at the local pond. Their bodies bore strange markings, leading some to believe they were used in some forbidden rites. The water turned black, and a heavy mist now shrouds the area at night.</p>
+        </div>
+
+        <div class="article">
+            <h2>Water Radiates a Sinister Glow</h2>
+            <p>Not only fluorescent, but the water from Millwater's reservoir has now taken on an ominous, dark red tint. Locals speak of an ancient curse awakened, and some have reported seeing ghostly faces within the water's depths, crying out in torment.</p>
+        </div>
+
+        <div class="article">
+            <h2><span class="glitch-container"><span class="glitch" data-text="John Weller">John Weller</span></span>: The Doomed Historian</h2>
+            <p>The disappearance of historian <span class="glitch-container"><span class="glitch" data-text="John Weller">John Weller</span></span> grows more enigmatic by the day. Last heard, he'd unearthed forbidden knowledge about Millwater's origins - a secret so dark, it might have cost him his very soul. Whispered legends talk of a book he found, with the power to summon the town's most malevolent spirits.</p>
+        </div>
+
+        <div class="article">
+            <h2>Cursed Cats: Omen of Doom</h2>
+            <p>The black cats, once considered guardians, are now feared as harbingers of doom. Their eyes glow an unnatural green, and they are seen at sites of mysterious deaths and disappearances, silently watching, always waiting...</p>
+        </div>
+
+        <div class="article">
+            <h2>Symbols of the Damned Mark the Town</h2>
+            <p>The eerie symbols graffitiing the town have been identified as ancient sigils of summoning and containment. Their purpose remains unclear, but as their numbers increase, so does the darkness enveloping Millwater. The veil between our world and the supernatural seems to be thinning rapidly.</p>
+        </div>
+    </div>
+</body>
+</html>
