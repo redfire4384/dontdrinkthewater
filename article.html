@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millwater Times</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f4e8d4;
+            margin: 40px;
+        }
+        .newspaper {
+            position: relative;
+            width: 80%;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+        }
+        .newspaper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            opacity: 0.6;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAmklEQVR42mJ8//8/AyUYFEIwGgNBoGw0DcRQWnBTVgxiYwMDQ5mgIlRlZQIxA8FAMhiNBrGaDuJogoSEhUJh0jAUxXww2KMRmIxGQmE2E4YIJRMzBnTgG+JCO5seBAYo8BiRogOBgVKT4JUdGAGThhJjK4jNhWpS3EIKCwC9F7NaDEcwsTldZjO5BoOhFomIoFCYjRksIiAqFEbDsUDI5VCYTQyGElYiA6AABFbEwBQIIjAEJdSGk2qzZCg4OVizgBD9hAAhOI4DcA1t6WAnUGmbMAAAAASUVORK5CYII=');
+            pointer-events: none;
+        }
+        .headline {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .article {
+            margin-bottom: 40px;
+        }
+        .article img {
+            float: left;
+            margin-right: 20px;
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="newspaper">
+        <div class="headline">Unexplained Events Haunt Millwater</div>
+
+        <div class="article">
+            <img src="https://www.willametteheritage.org/wp-content/uploads/2017/03/Mission-Mill-spring-8-copy.jpg" alt="Old Millwater building">
+            <h2>Abandoned Mill Resonates With Whispers</h2>
+            <p>Residents have reported eerie sounds emanating from the long-abandoned Millwater building. Some claim to hear faint murmurs resembling children's laughter, while others are convinced they've heard cries for help. Local authorities have advised against visiting the site after dark.</p>
+        </div>
+
+        <div class="article">
+            <h2>Ducks Vanish from Local Pond</h2>
+            <p>In a bewildering event, all the ducks from the local pond have mysteriously vanished overnight. Residents awoke to an unsettling silence, with the usually bustling pond eerily calm and devoid of its feathered inhabitants. Rumors suggest a link to the old legends of Millwater's tainted waters.</p>
+        </div>
+
+        <div class="article">
+            <h2>Water Samples Show Anomalies</h2>
+            <p>Recent water sampling from Millwater's central reservoir has shown some perplexing results. Though appearing clear, the samples exhibited fluorescent properties under certain light conditions. Residents are advised to avoid consumption until further notice.</p>
+        </div>
+
+        <div class="article">
+            <h2>Local Historian Goes Missing</h2>
+            <p>John Weller, a historian who had recently been researching the dark past of Millwater, has mysteriously disappeared. His last known location was near the old mill. Authorities are urging residents to come forward with any information.</p>
+        </div>
+
+        <div class="article">
+            <h2>Black Cats Spotted in Abundance</h2>
+            <p>Reports are flooding in about an unusual increase in the sightings of black cats around town, particularly around the old mill. Old tales speak of these cats as guardians or omens. Residents are advised to proceed with caution.</p>
+        </div>
+
+        <div class="article">
+            <h2>Mysterious Symbol Graffiti</h2>
+            <p>Various buildings in Millwater have been marked with a mysterious symbol overnight. The symbol, a circle with intricate patterns inside, has not been identified yet. Some link it to ancient rituals once practiced in the area.</p>
+        </div>
+    </div>
+</body>
+</html>
