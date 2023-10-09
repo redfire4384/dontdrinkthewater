@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Am I?</title>
+    <style>
+        #successMessage {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="passwordSection">
+    <label for="passwordInput">Enter Password:</label>
+    <input type="password" id="passwordInput">
+    <button onclick="checkPassword()">Submit</button>
+</div>
+
+<div id="successMessage">
+    <p><a href="https://www.instagram.com/thewaterisntsafehere/" target="_blank">@thewaterisntsafehere</a></p>
+</div>
+
+<script>
+    function checkPassword() {
+        var inputPassword = document.getElementById('passwordInput').value;
+        var correctPassword = "millwater";  // Replace with your desired password
+
+        if(inputPassword === correctPassword) {
+            document.getElementById('passwordSection').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        } else {
+            alert("Incorrect password. Please try again.");
+        }
+    }
+</script>
+
+</body>
+</html>
