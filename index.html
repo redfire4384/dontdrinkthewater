@@ -10,15 +10,16 @@
             font-size: 24px;
             text-align: center;
             margin: 20px;
+            transition: background-color 0.3s;
         }
         #container {
-            min-height: 100vh;
+            min-height: 200vh;
         }
     </style>
 </head>
 <body>
     <div id="container">
-        <!-- Repeatedly insert "don't drink the water" here using JavaScript -->
+        <!-- We'll still use the initial setup for appending messages, even though the focus is on the background change -->
     </div>
 
     <script>
@@ -29,10 +30,16 @@
             document.getElementById('container').appendChild(message);
         }
 
-        // Check for scroll and append more
+        // Change background color as you scroll
         window.addEventListener('scroll', function() {
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-                // User is at the bottom of the page
+            const maxScroll = document.body.scrollHeight - window.innerHeight;
+            const scrollPosition = window.scrollY;
+            const percentageScrolled = scrollPosition / maxScroll;
+            const bgColorValue = Math.floor(255 - (percentageScrolled * 255));
+            document.body.style.backgroundColor = `rgb(${bgColorValue}, ${bgColorValue}, ${bgColorValue})`;
+
+            // Append more content at the bottom
+            if (scrollPosition + window.innerHeight >= document.body.offsetHeight) {
                 for (let i = 0; i < 20; i++) {
                     const message = document.createElement('p');
                     message.textContent = "Don't drink the water";
