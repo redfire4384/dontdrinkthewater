@@ -79,7 +79,7 @@ function revealTruth() {
     const truthLinkDiv = document.getElementById('truthLink');
     
     // Using the provided decoded message
-    if (messageInput.value.trim().toUpperCase() === "DONT DRINK THE WATER SECRETS LIES BENEATH MILLWATER") {
+    if (messageInput.value.trim().toUpperCase() === "DONT DRINK THE WATERS TRUTH LIES BENEATH MILLWATER SECRETS") {
         truthLinkDiv.style.display = 'block';
     } else {
         alert('Incorrect message. Try again.');
