@@ -45,7 +45,7 @@ function applyShake(element) {
             element.style.transform = '';
             return;
         }
-        element.style.transform = \`translateX(\${(count % 2 === 0 ? 1 : -1) * shakeAmount}px)\`;
+        element.style.transform = 'translateX(' + ((count % 2 === 0 ? 1 : -1) * shakeAmount) + 'px)';
         count--;
         setTimeout(shakeOnce, 50);
     }
