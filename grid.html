@@ -90,6 +90,50 @@
             min-height: 100vh;
         }
 
+        .input-section {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .input-section input {
+            padding: 10px;
+            font-family: 'Inconsolata', monospace;
+            font-weight: bold;
+            background-color: #004d80;
+            color: #01FF70;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 255, 112, 0.5);
+            margin-bottom: 20px;
+        }
+    
+        .input-section button {
+            padding: 10px 20px;
+            font-family: 'Inconsolata', monospace;
+            font-weight: bold;
+            background-color: #004d80;
+            color: #01FF70;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 0 10px rgba(0, 255, 112, 0.5);
+        }
+    
+        .input-section button:hover {
+            background-color: #0066b2;
+        }
+    
+        .input-section a {
+            color: #01FF70;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
     </style>
 </head>
 
@@ -140,6 +184,14 @@
         <div class="cell">Waters</div>
         <div class="cell">The</div>
         <div class="cell">Millwater</div>
+    </div>
+
+    <div class="input-section">
+        <input type="text" id="decodedMessage" placeholder="Enter the decoded message...">
+        <button onclick="revealTruth()">Submit</button>
+        <div id="truthLink" style="display: none;">
+            <a href="truth.html">Discover the Truth</a>
+        </div>
     </div>
     
 </div>
