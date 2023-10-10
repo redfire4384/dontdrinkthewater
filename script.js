@@ -98,12 +98,10 @@ function revealTruth() {
     
     // Process the input message
     let processedInput = messageInput.value.trim().toLowerCase().replace(/[^a-z0-9]+/g, '');
+    console.log('Processed Input:', processedInput);
     
     if (processedInput === 'dontdrinkthewaterstruthliesbeneathmillwatersecrets') {
         truthLinkDiv.style.display = 'block';
-    } else {
-        alert('Incorrect message. Try again.');
-    }
-}
+    
         alert('Incorrect message. Try again.');
     }
