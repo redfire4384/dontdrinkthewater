@@ -35,6 +35,23 @@ document.querySelectorAll('.grid .cell').forEach(cell => {
     });
 });
 
+function applyShake(element) {
+    let count = 10; 
+    let shakeAmount = 5; 
+    let originalOffset = element.offsetLeft;
+
+    function shakeOnce() {
+        if (count <= 0) {
+            element.style.transform = '';
+            return;
+        }
+        element.style.transform = \`translateX(\${(count % 2 === 0 ? 1 : -1) * shakeAmount}px)\`;
+        count--;
+        setTimeout(shakeOnce, 50);
+    }
+    shakeOnce();
+}
+
 function checkSolution() {
     const cells = document.querySelectorAll('.grid .cell');
     let matrix = [
@@ -43,16 +60,16 @@ function checkSolution() {
         [cells[6].dataset.value, cells[7].dataset.value, cells[8].dataset.value]
     ];
 
+    const gridElement = document.querySelector('.grid');
+    
     if (matrix.toString() === '2,7,6,9,5,1,4,3,8') {
-        document.querySelector('.grid').style.backgroundColor = '#01FF70'; // Green background for correctness
-        setTimeout(() => {
-            alert('Correct! The message is unlocked!');
-        }, 500);
+        gridElement.style.backgroundColor = '#01FF70'; // Green background for correctness
+        let successMessage = document.createElement('div');
+        successMessage.innerHTML = "Correct! The message is unlocked!";
+        successMessage.style.color = 'red';
+        successMessage.style.fontSize = '2rem';
+        document.body.appendChild(successMessage);
     } else {
-        document.querySelector('.grid').classList.add('shake');
-        setTimeout(() => {
-            document.querySelector('.grid').classList.remove('shake');
-            alert('Incorrect. Try again.');
-        }, 500);
+        applyShake(gridElement);
     }
 }
