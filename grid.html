@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;700&display=swap" rel="stylesheet"> <!-- Importing a monospace font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;700&display=swap" rel="stylesheet">
     <title>Mystery of Millwater</title>
     <style>
         body {
@@ -12,6 +12,7 @@
             background-color: #001f3f;
             color: #01FF70;
             padding: 20px;
+            text-align: center;
         }
 
         @keyframes shake {
@@ -21,13 +22,12 @@
             75% { transform: translateX(-10px); }
             100% { transform: translateX(0); }
         }
-        
+
         .shake {
             animation: shake 0.5s linear;
         }
-        
+
         h1 {
-            text-align: center;
             font-weight: 700;
             margin-bottom: 30px;
             font-size: 2rem;
@@ -41,11 +41,35 @@
             box-shadow: 0 0 10px rgba(0, 255, 112, 0.5);
         }
 
-        .grid, .numbers, .words {
-            display: grid;
-            grid-template-columns: repeat(3, 80px);
-            gap: 5px;
+        .grid-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 80px);
+            gap: 5px;
+        }
+
+        .eq-row, .eq-col div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            font-weight: bold;
+        }
+
+        .eq-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 5px;
+            margin-left: 5px;
         }
 
         .cell {
@@ -94,16 +118,28 @@
     <p>- John Weller</p>
 </div>
 
-<div class="grid">
-    <div class="cell">2</div>
-    <div class="cell" data-value=""></div>
-    <div class="cell" data-value=""></div>
-    <div class="cell" data-value=""></div>
-    <div class="cell" data-value=""></div>
-    <div class="cell">1</div>
-    <div class="cell" data-value=""></div>
-    <div class="cell" data-value=""></div>
-    <div class="cell" data-value=""></div>
+<div class="grid-wrapper">
+    <div class="grid">
+        <div class="cell">2</div>
+        <div class="cell" data-value=""></div>
+        <div class="cell" data-value=""></div>
+        <div class="eq-row">= 15</div>
+
+        <div class="cell" data-value=""></div>
+        <div class="cell" data-value=""></div>
+        <div class="cell">1</div>
+        <div class="eq-row">= 15</div>
+
+        <div class="cell" data-value=""></div>
+        <div class="cell" data-value=""></div>
+        <div class="cell" data-value=""></div>
+        <div class="eq-row">= 15</div>
+    </div>
+    <div class="eq-col">
+        <div>= 15</div>
+        <div>= 15</div>
+        <div>= 15</div>
+    </div>
 </div>
 
 <p>Numbers:</p>
@@ -119,7 +155,6 @@
 
 <p>Message:</p>
 <div class="words">
-    <!-- Add your words here as more .cell divs -->
     <!-- e.g., <div class="cell">Word1</div> -->
 </div>
 
