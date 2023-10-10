@@ -82,49 +82,59 @@
             color: #001f3f;
         }
 
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
     </style>
 </head>
 
 <body>
-
-<h1>Mystery of Millwater</h1>
-
-<div class="note">
-    <p>"If you're deciphering this, then my fears have come to pass and I am no longer safe in Millwater. My life's work as a historian wasn't merely about recording past events, but uncovering truths others would prefer remain buried. The puzzle above isn't just a test of wit—it's a safeguard. Only those who understand its intricacies will unravel the secrets below. It's crucial you do so; the town's history, and its present, hinge on it. Trust no one. And remember—don't drink the water."</p>
-    <p>- John Weller</p>
+<div class="container">
+    
+    <h1>Mystery of Millwater</h1>
+    
+    <div class="note">
+        <p>"If you're deciphering this, then my fears have come to pass and I am no longer safe in Millwater. My life's work as a historian wasn't merely about recording past events, but uncovering truths others would prefer remain buried. The puzzle above isn't just a test of wit—it's a safeguard. Only those who understand its intricacies will unravel the secrets below. It's crucial you do so; the town's history, and its present, hinge on it. Trust no one. And remember—don't drink the water."</p>
+        <p>- John Weller</p>
+    </div>
+    
+    <div class="grid">
+        <div class="cell">2</div>
+        <div class="cell" data-value=""></div>
+        <div class="cell" data-value=""></div>
+        <div class="cell" data-value=""></div>
+        <div class="cell" data-value=""></div>
+        <div class="cell">1</div>
+        <div class="cell" data-value=""></div>
+        <div class="cell" data-value=""></div>
+        <div class="cell" data-value=""></div>
+    </div>
+    
+    <p>Numbers:</p>
+    <div class="numbers">
+        <div class="cell" data-value="3">3</div>
+        <div class="cell" data-value="4">4</div>
+        <div class="cell" data-value="5">5</div>
+        <div class="cell" data-value="6">6</div>
+        <div class="cell" data-value="7">7</div>
+        <div class="cell" data-value="8">8</div>
+        <div class="cell" data-value="9">9</div>
+    </div>
+    
+    <p>Message:</p>
+    <div class="words">
+        <!-- Add your words here as more .cell divs -->
+        <!-- e.g., <div class="cell">Word1</div> -->
+    </div>
+    
+    <button class="reset-button" onclick="location.reload();">Reset</button>
 </div>
-
-<div class="grid">
-    <div class="cell">2</div>
-    <div class="cell" data-value=""></div>
-    <div class="cell" data-value=""></div>
-    <div class="cell" data-value=""></div>
-    <div class="cell" data-value=""></div>
-    <div class="cell">1</div>
-    <div class="cell" data-value=""></div>
-    <div class="cell" data-value=""></div>
-    <div class="cell" data-value=""></div>
-</div>
-
-<p>Numbers:</p>
-<div class="numbers">
-    <div class="cell" data-value="3">3</div>
-    <div class="cell" data-value="4">4</div>
-    <div class="cell" data-value="5">5</div>
-    <div class="cell" data-value="6">6</div>
-    <div class="cell" data-value="7">7</div>
-    <div class="cell" data-value="8">8</div>
-    <div class="cell" data-value="9">9</div>
-</div>
-
-<p>Message:</p>
-<div class="words">
-    <!-- Add your words here as more .cell divs -->
-    <!-- e.g., <div class="cell">Word1</div> -->
-</div>
-
-<button class="reset-button" onclick="location.reload();">Reset</button>
-
+    
 <script src="script.js"></script>
 
 </body>
