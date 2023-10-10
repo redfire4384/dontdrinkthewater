@@ -103,6 +103,7 @@ function revealTruth() {
     if (processedInput === 'dontdrinkthewaterstruthliesbeneathmillwatersecrets') {
         truthLinkDiv.style.display = 'block';
     
+    } else {
         alert('Incorrect message. Try again.');
     }
 }
