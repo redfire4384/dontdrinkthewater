@@ -21,6 +21,24 @@ document.querySelectorAll('.numbers .cell').forEach(cell => {
 document.querySelectorAll('.grid .cell').forEach(cell => {
     cell.addEventListener('click', function() {
         // If a number is selected and this cell is empty, fill it
+        // If the cell contains a number other than 1 or 2, move it back to the number section
+        if (this.dataset.value && this.dataset.value !== '1' && this.dataset.value !== '2') {
+            const numDiv = document.createElement('div');
+            numDiv.className = 'cell';
+            numDiv.dataset.value = this.dataset.value;
+            numDiv.innerText = this.dataset.value;
+            document.querySelector('.numbers').appendChild(numDiv);
+            this.dataset.value = '';
+            this.innerText = '';
+            // Reattach the click event to the moved number
+            numDiv.addEventListener('click', function() {
+                if (selectedNum) {
+                    selectedNum.style.backgroundColor = '';
+                }
+                selectedNum = this;
+                this.style.backgroundColor = '#01FF70';
+            });
+        }
         if (selectedNum && !this.dataset.value) {
             this.dataset.value = selectedNum.dataset.value;
             this.innerText = selectedNum.dataset.value;
