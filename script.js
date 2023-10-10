@@ -44,12 +44,15 @@ function checkSolution() {
     ];
 
     if (matrix.toString() === '2,7,6,9,5,1,4,3,8') {
-        alert('Correct! The message is unlocked!');
+        document.querySelector('.grid').style.backgroundColor = '#01FF70'; // Green background for correctness
+        setTimeout(() => {
+            alert('Correct! The message is unlocked!');
+        }, 500);
     } else {
-        alert('Incorrect. Try again.');
         document.querySelector('.grid').classList.add('shake');
         setTimeout(() => {
             document.querySelector('.grid').classList.remove('shake');
+            alert('Incorrect. Try again.');
         }, 500);
     }
 }
