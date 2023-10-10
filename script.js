@@ -46,6 +46,10 @@ function checkSolution() {
     if (matrix.toString() === '2,7,6,9,5,1,4,3,8') {
         alert('Correct! The message is unlocked!');
     } else {
-        alert('Try again.');
+        alert('Incorrect. Try again.');
+        document.querySelector('.grid').classList.add('shake');
+        setTimeout(() => {
+            document.querySelector('.grid').classList.remove('shake');
+        }, 500);
     }
 }
