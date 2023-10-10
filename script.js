@@ -96,10 +96,14 @@ function revealTruth() {
     const messageInput = document.getElementById('decodedMessage');
     const truthLinkDiv = document.getElementById('truthLink');
     
-    // Using the provided decoded message
-    if (messageInput.value.trim().toUpperCase() === "DONT DRINK THE WATERS TRUTH LIES BENEATH MILLWATER SECRETS") {
+    // Process the input message
+    let processedInput = messageInput.value.trim().toLowerCase().replace(/[^a-z0-9]+/g, '');
+    
+    if (processedInput === 'dontdrinkthewaterstruthliesbeneathmillwatersecrets') {
         truthLinkDiv.style.display = 'block';
     } else {
         alert('Incorrect message. Try again.');
     }
 }
+        alert('Incorrect message. Try again.');
+    }
