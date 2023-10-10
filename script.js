@@ -105,3 +105,4 @@ function revealTruth() {
     
         alert('Incorrect message. Try again.');
     }
+}
