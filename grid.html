@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;700&display=swap" rel="stylesheet"> <!-- Importing a monospace font -->
+    <title>Mystery of Millwater</title>
+    <style>
+        body {
+            font-family: 'Inconsolata', monospace;
+            background-color: #001f3f;
+            color: #01FF70;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .note {
+            background-color: #004d80;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 255, 112, 0.5);
+        }
+
+        .grid, .numbers, .words {
+            display: grid;
+            grid-template-columns: repeat(3, 80px);
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .cell {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #004d80;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 255, 112, 0.5);
+            transition: background-color 0.3s;
+        }
+
+        .cell:hover {
+            background-color: #0066b2;
+        }
+
+        .reset-button {
+            padding: 10px 20px;
+            background-color: #001f3f;
+            color: #01FF70;
+            border: 2px solid #01FF70;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .reset-button:hover {
+            background-color: #01FF70;
+            color: #001f3f;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h1>Mystery of Millwater</h1>
+
+<div class="note">
+    <p>If you're seeing this, it means I've gone missing. Use the puzzle above to unlock my message below.</p>
+    <p>- Dr. Jameson</p>
+</div>
+
+<div class="grid">
+    <div class="cell">2</div>
+    <div class="cell" data-value=""></div>
+    <div class="cell" data-value=""></div>
+    <div class="cell" data-value=""></div>
+    <div class="cell" data-value=""></div>
+    <div class="cell">1</div>
+    <div class="cell" data-value=""></div>
+    <div class="cell" data-value=""></div>
+    <div class="cell" data-value=""></div>
+</div>
+
+<p>Numbers:</p>
+<div class="numbers">
+    <div class="cell" data-value="3">3</div>
+    <div class="cell" data-value="4">4</div>
+    <div class="cell" data-value="5">5</div>
+    <div class="cell" data-value="6">6</div>
+    <div class="cell" data-value="7">7</div>
+    <div class="cell" data-value="8">8</div>
+    <div class="cell" data-value="9">9</div>
+</div>
+
+<p>Message:</p>
+<div class="words">
+    <!-- Add your words here as more .cell divs -->
+    <!-- e.g., <div class="cell">Word1</div> -->
+</div>
+
+<button class="reset-button" onclick="location.reload();">Reset</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
